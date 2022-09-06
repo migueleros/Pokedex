@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <title>PokéSearch</title>
+    <link rel="stylesheet" href="styles/index.css"> 
+    <script src="script/elements.js" async></script>
+    <script src="script/index.js" async></script>
+    <link rel="shortcut icon" href="assets/dexIcon.png" type="image/x-icon">
+</head>
+<body>
+    <header class="side-menu">
+        <div class="site-info">
+            <img src="Assets/dexIcon.png" alt="dexIcon">
+        </div>
+
+        <nav class="menu">
+            <div class="menu-item active">
+                <a href="">Home</a>
+            </div>
+
+            <div class="menu-item">
+                <a href="">News</a>
+            </div>
+
+            <div class="menu-item">
+                <a href="">Pokédex</a>
+            </div>
+
+            <div class="menu-item">
+                <a href="html/search.html">Search</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="result-page-wrapper">
+        <div class="result-page">
+            <div class="result-pictures">
+                <div class="result-background">
+                    <button class="shiny-button">
+                        <img src="assets/sparkle-icon.png" alt="">
+                    </button>
+
+                    <div class="result-background-image">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-info">
+            
+            </div>
+
+            <div class="close-button">
+                <div class="close-button-elements"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-content page activePage">
+        <div class="home-info page-info">
+            <h1 class="pokeFont">
+                Welcome to PokéSearch
+            </h1>
+
+            <p>
+                PokéSearch is a PokéAPI based website made by <a href="https://github.com/Herlss" class="gitHubLink" target="_blank"><span class="pokeFont">Herls</span></a> that works like a pokédex. Here you can search for pokémon to see its abilities, types, weaknesses, moves, their general physical characteristics and much more!!
+            </p>
+
+            <p>
+                Not just that, but you can see a full list of every pokémon, items and abilities that are present in the <span class="pokeFont">Pokémon</span> world.
+            </p>
+        </div>
+    </div>
+
+    <div class="news-content page">
+        <div class="news-info page-info">
+            <h1 class="pokeFont">Coming Soon</h1>
+        </div>
+    </div>
+
+    <div class="pokedex-content page">
+        <h1 class="pokeFont">Pokédex</h1>
+        
+        <div class="pokedex-info page-info">
+            
+        </div>
+    </div>
+
+    <div class="search-content page">
+        <div class="search-info page-info">
+            <h1 class="pokeFont">Search</h1>
+
+            <p>
+                Here you can use the search bar to look for a specific pokémon. Type the pokémon name or number and press the search button or the enter key on your keyboard.
+            </p>
+        </div>
+
+        <div class="search-bar-container page-info">
+            <div class="search-bar">
+                <input type="text" name="pokeName" id="pokeName" placeholder="Type here.." autocomplete="off">
+            </div>
+            <button id="submitPokemon">
+                Search
+            </button>
+            <p class="errorMessage">Digite um pokémon que existe..</p>
+
+            <div class="loading-content">
+                <div class="loading">
+                    <img src="assets/runningPikachuIcon.gif" alt="pikachuRunning">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

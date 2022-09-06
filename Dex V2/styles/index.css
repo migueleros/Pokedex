@@ -10,7 +10,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
 
 .pokeFont {
@@ -18,9 +17,7 @@ body {
     color:#FF5252;
 }
 
-::-webkit-scrollbar {
-    display: none;
-} 
+
 
 .site-info {
     height: fit-content;
@@ -110,7 +107,7 @@ body {
     margin-right: auto;margin-left: auto;
 }
 
-.page-info h1 {
+.page h1.pokeFont {
     border-bottom: solid #FF5252 2px;
 }
 
@@ -149,8 +146,15 @@ body {
     height: 85px;
 }
 
-.pokedex-info h1 {
-    width: 250px;
+.pokedex-info {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.pokedex-content h1 {
+    margin-left: 60px;
+    margin-bottom: 30px;
+    width: 170px;
     height: 85px;
 }
 
@@ -431,4 +435,135 @@ body {
 
 .result-background-image {
     height: 100%;
+}
+
+.pokedex-card {
+    width: 270px;
+    height: 400px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.pokedex-card h1{
+    text-align: center;
+    font-size: 1.5em;
+    height: fit-content;
+}
+
+.pokedex-card span {
+    color: gray;
+}
+
+.pokedex-card-header {
+    transition-duration: .4s;
+    cursor: pointer;
+    height: 140px;
+}
+
+.pokedex-card-header:hover {
+    opacity: .9;
+    transition-duration: .4s;
+}
+
+.pokedex-card-body {
+    padding-top: 5px;
+    height: 65%;
+    text-transform: capitalize;
+    background-color: white;
+}
+
+.pokedex-card-background {
+    height: 140px;
+    width: 270px;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.pokedex-card-image {
+    position: relative;
+    transform: translate(65%,10%);
+    height: 120px;
+    width: 120px;
+}
+
+.pokedex-card .pokemon-type {
+    margin: -15px auto;
+}
+
+.pokedex-card .attribute-title {
+    margin-top: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.attributes {
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+}
+
+.pokedex-card .attribute-info {
+    font-size: 1em;
+    width: fit-content;
+}
+
+.attribute-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:400px) {
+    .side-menu {
+        width: 100%;
+        height: 70px;
+        background-color: white;
+        box-shadow: 2px 2px 5px gray;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .menu {
+        border: 1px solid black;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .menu-item {
+        height: 50px;
+        width: 20%;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        transition-duration: .4s;
+        user-select: none;
+        margin: 10px;
+    }
+
+    .site-info {
+        display: none;
+    }
+
+    .page {
+        width: 100%;
+        background-color: white;
+        height: 690px;
+        position: absolute;
+        right: 0;
+        display: none;
+        margin: 50px 10px;
+    }
+    
+    .page.activePage {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .page-info {
+        width: 85%;
+        height: fit-content;    
+        margin: 0px;
+    }
 }

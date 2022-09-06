@@ -10,23 +10,87 @@ menuItems.forEach((item,i) => {
         },1000)
         
         pages.forEach(page => {page.classList.remove('activePage')})
-        pages[i].classList.add('activePage')
+        pages[i].classList.add('activePage')    
     })
 })
 
-function callAPI(){
+const dexCardFetch = async (num) => {
+    let pokeEndPoint = `https://pokeapi.co/api/v2/pokemon/${num}`;
+    const response = await fetch(pokeEndPoint);
+    const data = await response.json();
+    return data;
+};
+
+const buildDex = async () => {
+    for (i = 1; i < 1000; i++) {
+        let api = await dexCardFetch(i);
+
+        dexPage.insertAdjacentHTML('beforeend', `
+            <div class='pokedex-card'>
+                <div class='pokedex-card-header'>
+                    <img src='assets/poke-background.jpg' class='pokedex-card-background'></img>
+                    <img src='${api.sprites.front_default}' class='pokedex-card-image'></img>
+                </div>
+
+                <div class='pokedex-card-body'>
+                    <h1>${api.name}<span> Nº${api.id}</span></h1>
+
+                    <div class='pokemon-type'>${api.types[0].type.name}</div>
+                    
+                    <div class="attribute-wrapper">
+                        <div class="attributes">
+                            <div class='attribute-title'>
+                                Height
+                            </div>
+    
+                            <div class='attribute-info'>
+                                ${api.height} M
+                            </div>
+                        </div>
+    
+                        <div class="attributes">
+                            <div class='attribute-title'>
+                                Weight
+                            </div>
+    
+                            <div class='attribute-info'>
+                                ${api.weight} Kg
+                            </div>
+                        </div>
+    
+                        <div class="attributes">
+                            <div class='attribute-title'>
+                                Ability
+                            </div>
+    
+                            <div class='attribute-info'>
+                                ${api.abilities[0].ability.name}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+};
+
+buildDex();
+
+function searchCardFetch(){
     let pokeInputValue = searchBar.value.toLowerCase()
     let dataEndPoint = `https://pokeapi.co/api/v2/pokemon/${pokeInputValue}`
-    let speciesEndPoint = `https://pokeapi.co/api/v2/pokemon-species/${pokeInputValue}`
 
     fetch(dataEndPoint).then(response => {
         response.json().then(pokemonData => {
-            fetch(speciesEndPoint).then(speciesResponse => {
+            fetch(pokemonData.species.url).then(speciesResponse => {
                 speciesResponse.json().then(speciesData => {
                     makeCard(pokemonData,speciesData)
                     shinySwitch(pokemonData)
                     pageDown()
                     console.log(pokemonData)
+                })
+                .catch(() => {
+                    printError()
                 })
             })
         })
@@ -44,33 +108,8 @@ const pageDown = () => {
 }
 
 const makeCard = (pokemonData,speciesData) => {
-    switch (pokemonData.types[0].type.name){
-        case 'grass':
-            dexHeader.style.backgroundImage = "url('assets/bug_background.webp')"
-            break
-        case 'rock','ground':
-            dexHeader.style.backgroundImage = "url('assets/rock-background.png')";
-            break
-        case 'water':
-            dexHeader.style.backgroundImage = "url('assets/water_background.gif')"
-            break
-        case 'flying':
-            dexHeader.style.backgroundImage = "url('assets/flying_background.gif')"
-            break
-        case 'dark':
-            dexHeader.style.backgroundImage = "url('assets/dark_background.gif')"
-            break
-        case 'psychic':
-            dexHeader.style.backgroundImage = "url('assets/psychic_background.png')"
-            break
-        case 'fire':
-            dexHeader.style.backgroundImage = "url('assets/fire_background.png')"
-            break
-        default:
-            dexHeader.style.backgroundImage = "url('assets/poke-background.jpg')"
-            break
-    }
-
+    dexHeader.style.backgroundImage = types[pokemonData.types[0].type.name]
+    
     resultInfo.innerHTML = `    
         <h1>${pokemonData.name} <span>Nº${pokemonData.id}</span></h1>   
 
@@ -164,12 +203,12 @@ const printError = () => {
 
 submitButton.addEventListener('click', () => {
     loadingMessage.style.display = 'block'
-    callAPI()
+    searchCardFetch()
 })
 
 document.body.addEventListener('keydown', (e) => {
     if (e.key == "Enter" && searchBar === document.activeElement){
-        callAPI()
+        searchCardFetch()
         loadingMessage.style.display = 'block'
         searchBar.blur()
     }else if (e.key == "Escape" && resultPage.classList.contains('page-open')){
