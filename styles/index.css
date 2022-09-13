@@ -441,7 +441,7 @@ body {
     height: 100%;
 }
 
-@media (max-width:500px) {
+@media (max-width:900px) {
     .site-info {
         display: none;
     }
