@@ -547,7 +547,7 @@ body {
     .result-page-wrapper {
         position: absolute;
         display: none;
-        transform: translateY(-700px);
+        transform: translateY(-1400px);
         height: 100%;
         width: 100%;
         background-color: white;
