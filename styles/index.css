@@ -1,6 +1,10 @@
-@import url('//fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('//fonts.cdnfonts.com/css/pokemon-solid');
-@import url('//fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@font-face {
+    font-family: 'Pokemon Solid';
+    src: url('../fonts/pokemon/Pokemon\ Solid.ttf');
+
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+}
 
 * {
     box-sizing: border-box;
