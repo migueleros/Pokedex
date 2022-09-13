@@ -4,7 +4,7 @@ menuItems.forEach((item,i) => {
         menuItems.forEach(item => {item.classList.remove('active')})
         item.classList.add('active') 
 
-        resultPage.style.transform = 'translateY(-700px)'
+        resultPage.style.transform = 'translateY(-1400px)'
         setTimeout(() => {
             resultPage.classList.remove('page-open')
         },1000)
