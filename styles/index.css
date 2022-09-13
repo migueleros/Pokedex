@@ -23,8 +23,6 @@ body {
     color:#FF5252;
 }
 
-
-
 .site-info {
     height: fit-content;
     margin-bottom: 20px;    
@@ -95,7 +93,7 @@ body {
 .page {
     width: 85%;
     background-color: white;
-    height: 690px;
+    height: 650px;
     position: absolute;
     right: 0;
     display: none;
@@ -158,8 +156,7 @@ body {
 }
 
 .pokedex-content h1 {
-    margin-left: 60px;
-    margin-bottom: 30px;
+    margin: 0px 0px 45px 60px;
     width: 170px;
     height: 85px;
 }

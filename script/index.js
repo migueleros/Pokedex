@@ -8,7 +8,7 @@ menuItems.forEach((item,i) => {
         setTimeout(() => {
             resultPage.classList.remove('page-open')
         },1000)
-        
+
         pages.forEach(page => {page.classList.remove('activePage')})
         pages[i].classList.add('activePage')    
     })
