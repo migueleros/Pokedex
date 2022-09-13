@@ -1,6 +1,6 @@
-@import url(//fonts.googleapis.com/css2?family=Poppins&display=swap);
-@import url(//fonts.cdnfonts.com/css/pokemon-solid);
-@import url(//fonts.googleapis.com/css2?family=Silkscreen&display=swap);
+@import url('//fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('//fonts.cdnfonts.com/css/pokemon-solid');
+@import url('//fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 * {
     box-sizing: border-box;
