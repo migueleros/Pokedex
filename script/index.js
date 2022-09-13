@@ -4,7 +4,7 @@ menuItems.forEach((item,i) => {
         menuItems.forEach(item => {item.classList.remove('active')})
         item.classList.add('active') 
 
-        resultPage.style.transform = 'translateY(-1400px)'
+        resultPage.style.transform = 'translateY(-2000px)'
         setTimeout(() => {
             resultPage.classList.remove('page-open')
         },1000)
@@ -182,7 +182,7 @@ document.body.addEventListener('keydown', (e) => {
 })  
 
 closeButton.addEventListener('click', () => {
-    resultPage.style.transform = 'translateY(-1400px)'
+    resultPage.style.transform = 'translateY(-2000px)'
 
     setTimeout(() => {
         resultPage.classList.remove('page-open')
