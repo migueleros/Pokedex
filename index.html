@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-control" content="no-cache">
     <title>PokéSearch</title>
-    <link rel="stylesheet" href="styles/index.css"> 
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/dexIcon.png" type="image/x-icon">
     <script src="script/elements.js" async></script>
     <script src="script/index.js" async></script>
-    <link rel="shortcut icon" href="assets/dexIcon.png" type="image/x-icon">
 </head>
 <body>
     <header class="side-menu">
@@ -18,21 +18,21 @@
         </div>
 
         <nav class="menu">
-            <div class="menu-item active">
-                <a href="">Home</a>
-            </div>
+            <ul class="menu-item active">
+                <li><a href="#">Home</a></li>
+            </ul>
 
-            <div class="menu-item">
-                <a href="">News</a>
-            </div>
+            <ul class="menu-item">
+                <li><a href="#">News</a></li>
+            </ul>
 
-            <div class="menu-item">
-                <a href="">Pokédex</a>
-            </div>
+            <ul class="menu-item">
+                <li><a href="#">Pokédex</a></li>
+            </ul>
 
-            <div class="menu-item">
-                <a href="html/search.html">Search</a>
-            </div>
+            <ul class="menu-item">
+                <li><a href="#">Search</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -63,15 +63,15 @@
     <div class="home-content page activePage">
         <div class="home-info page-info">
             <h1 class="pokeFont">
-                Welcome to PokéSearch
+                Welcome
             </h1>
 
             <p>
-                PokéSearch is a PokéAPI based website made by <a href="https://github.com/Herlss" class="gitHubLink" target="_blank"><span class="pokeFont">Herls</span></a> that works like a pokédex. Here you can search for pokémon to see its abilities, types, weaknesses, moves, their general physical characteristics and much more!!
+                PokéSearch is a PokéAPI based website made by <a href="https://github.com/Herlss" class="gitHubLink" target="_blank">Herls</a> that works like a pokédex. Here you can search for pokémon to see its abilities, types, weaknesses, moves, their general physical characteristics and much more!!
             </p>
 
             <p>
-                Not just that, but you can see a full list of every pokémon, items and abilities that are present in the <span class="pokeFont">Pokémon</span> world.
+                Not just that, but you can see a full list of every pokémon, items and abilities that are present in the Pokémon world.
             </p>
         </div>
     </div>
@@ -103,9 +103,7 @@
             <div class="search-bar">
                 <input type="text" name="pokeName" id="pokeName" placeholder="Type here.." autocomplete="off">
             </div>
-            <button id="submitPokemon">
-                Search
-            </button>
+
             <p class="errorMessage">Digite um pokémon que existe..</p>
 
             <div class="loading-content">

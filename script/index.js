@@ -8,7 +8,7 @@ menuItems.forEach((item,i) => {
         setTimeout(() => {
             resultPage.classList.remove('page-open')
         },1000)
-
+        
         pages.forEach(page => {page.classList.remove('activePage')})
         pages[i].classList.add('activePage')    
     })
@@ -22,7 +22,7 @@ const dexCardFetch = async (num) => {
 };
 
 const buildDex = async () => {
-    for (i = 1; i < 1000; i++) {
+    for (i = 1; i < 10; i++) {
         let api = await dexCardFetch(i);
 
         dexPage.insertAdjacentHTML('beforeend', `
@@ -34,40 +34,6 @@ const buildDex = async () => {
 
                 <div class='pokedex-card-body'>
                     <h1>${api.name}<span> Nº${api.id}</span></h1>
-
-                    <div class='pokemon-type'>${api.types[0].type.name}</div>
-                    
-                    <div class="attribute-wrapper">
-                        <div class="attributes">
-                            <div class='attribute-title'>
-                                Height
-                            </div>
-    
-                            <div class='attribute-info'>
-                                ${api.height} M
-                            </div>
-                        </div>
-    
-                        <div class="attributes">
-                            <div class='attribute-title'>
-                                Weight
-                            </div>
-    
-                            <div class='attribute-info'>
-                                ${api.weight} Kg
-                            </div>
-                        </div>
-    
-                        <div class="attributes">
-                            <div class='attribute-title'>
-                                Ability
-                            </div>
-    
-                            <div class='attribute-info'>
-                                ${api.abilities[0].ability.name}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         `)
@@ -201,18 +167,13 @@ const printError = () => {
     errorMessage.style.display = 'block'
 }
 
-submitButton.addEventListener('click', () => {
-    loadingMessage.style.display = 'block'
-    searchCardFetch()
-})
-
 document.body.addEventListener('keydown', (e) => {
     if (e.key == "Enter" && searchBar === document.activeElement){
         searchCardFetch()
         loadingMessage.style.display = 'block'
         searchBar.blur()
     }else if (e.key == "Escape" && resultPage.classList.contains('page-open')){
-        resultPage.style.transform = 'translateY(-700px)'
+        resultPage.style.transform = 'translateY(-2000px)'
 
         setTimeout(() => {
             resultPage.classList.remove('page-open')
@@ -221,7 +182,7 @@ document.body.addEventListener('keydown', (e) => {
 })  
 
 closeButton.addEventListener('click', () => {
-    resultPage.style.transform = 'translateY(-700px)'
+    resultPage.style.transform = 'translateY(-1400px)'
 
     setTimeout(() => {
         resultPage.classList.remove('page-open')
