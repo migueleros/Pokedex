@@ -451,8 +451,6 @@ body {
         height: fit-content;
         background-color: white;
         box-shadow: 2px 2px 5px gray;
-        float: none;
-        border: 1px solid black;
         position: static;
         display: flex;
         justify-content: center;
