@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'Pokemon Solid';
     src: url('../fonts/pokemon/Pokemon\ Solid.ttf');
+}
 
+@font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins/Poppins-Regular.ttf');
 }
