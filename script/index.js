@@ -22,7 +22,7 @@ const dexCardFetch = async (num) => {
 };
 
 const buildDex = async () => {
-    for (i = 1; i < 10; i++) {
+    for (i = 1; i < 152; i++) {
         let api = await dexCardFetch(i);
 
         dexPage.insertAdjacentHTML('beforeend', `
