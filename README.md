@@ -13,4 +13,4 @@
 - Fix bugs.. of course 🐛
 
 <strong>Acess the site here:</strong>
-https://herlss.github.io/Pokedex/
+https://migueleros.github.io/Pokedex/
